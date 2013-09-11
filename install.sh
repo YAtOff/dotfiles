@@ -13,3 +13,6 @@ for name in *; do
     fi
   fi
 done
+
+# Prevent vagran from runnung this script every time
+touch $HOME/.baseline_dotfiles
