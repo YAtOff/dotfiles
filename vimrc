@@ -811,5 +811,12 @@ let g:ctrlp_prompt_mappings = {
 \ }
 
 " }}}
+" Vimux {{{
+noremap <localleader>rl :wa<CR> :VimuxRunLastCommand<CR>
+noremap <localleader>vi :wa<CR> :VimuxInspectRunner<CR>
+noremap <localleader>vk :wa<CR> :VimuxInterruptRunner<CR>
+noremap <localleader>vx :wa<CR> :VimuxClosePanes<CR>
+noremap <localleader>vp :VimuxPromptCommand<CR>
+" }}}
 
 " }}}
