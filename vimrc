@@ -790,14 +790,6 @@ let g:SuperTabLongestHighlight = 1
 let g:SuperTabCrMapping = 1
 
 "}}}
-" tslime {{{
-
-let g:tslime_ensure_trailing_newlines = 1
-let g:tslime_normal_mapping = '<localleader>t'
-let g:tslime_visual_mapping = '<localleader>t'
-let g:tslime_vars_mapping = '<localleader>T'
-
-" }}}
 " Ctrl-P {{{
 
 let g:ctrlp_jump_to_buffer = 0

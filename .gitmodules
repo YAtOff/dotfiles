@@ -31,9 +31,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/tslime"]
-	path = vim/bundle/tslime
-	url = https://github.com/LnL7/vim-tslime.git
 [submodule "vim/bundle/colors-solarized"]
 	path = vim/bundle/colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
