@@ -1,55 +1,54 @@
 [alias]
-        ci = commit
-        co = checkout
-        graph = log --graph --decorate --oneline --branches
-        df = diff --cached --color --color-words
-        dff = diff --color --color-words
-	di = diff
-	dc = diff --cached
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	s = status
-	amend = commit --amend
-	aa = add --all
-	ff = merge --ff-only
-	pullff = pull --ff-only
-	noff = merge --no-ff
-	fa = fetch --all
-	pom = push origin master
-	b = branch
-	ds = diff --stat=160,120
-	dh1 = diff HEAD~1
+    ci = commit
+    co = checkout
+    graph = log --graph --decorate --oneline --branches
+    dfc = diff --cached --color --color-words
+    df = diff --color --color-words
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    s = status
+    amend = commit --amend
+    aa = add --all
+    ff = merge --ff-only
+    pullff = pull --ff-only
+    noff = merge --no-ff
+    fa = fetch --all
+    pom = push origin master
+    b = branch
+    ds = diff --stat=160,120
+    dh1 = diff HEAD~1
 
-	# Fancy logging.
-	#   h = head
-	#   hp = head with patch
-	#   r = recent commits, only current branch
-	#   ra = recent commits, all reachable refs
-	#   l = all commits, only current branch
-	#   la = all commits, all reachable refs
-	head = !git l -1
-	h = !git head
-	hp = "!. ~/.githelpers && show_git_head"
-	r = !git l -30
-	ra = !git r --all
-	l = "!. ~/.githelpers && pretty_git_log"
-	la = !git l --all
+# Fancy logging.
+#   h = head
+#   hp = head with patch
+#   r = recent commits, only current branch
+#   ra = recent commits, all reachable refs
+#   l = all commits, only current branch
+#   la = all commits, all reachable refs
+    head = !git l -1
+    h = !git head
+    hp = "!. ~/.githelpers && show_git_head"
+    r = !git l -30
+    ra = !git r --all
+    l = "!. ~/.githelpers && pretty_git_log"
+    la = !git l --all
+    rms = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
 
 [color]
-        ui = always
+    ui = always
 [core]
-	editor = vim --noplugin
-        excludesfile = ~/.gitignore
-	autocrlf = input
+    editor = vim --noplugin
+    excludesfile = ~/.gitignore
+    autocrlf = input
 [diff]
-        tool = vimdiff
+    tool = vimdiff
 [merge]
-	tool = vimdiff
-	ff = only
+    tool = vimdiff
+    ff = only
 [user]
-	name = Yavor Atov
-	email = yavor_a@abv.bg
+    name = Yavor Atov
+    email = yavor_a@abv.bg
 [push]
-	default = current
+    default = current
 [help]
-	autocorrect = 1
+    autocorrect = 1
