@@ -817,6 +817,9 @@ noremap <localleader>vk :wa<CR> :VimuxInterruptRunner<CR>
 noremap <localleader>vx :wa<CR> :VimuxClosePanes<CR>
 noremap <localleader>vp :VimuxPromptCommand<CR>
 " }}}
+" Tagbar {{{
+nnoremap <silent> <F9> :TagbarToggle<CR>
+" }}}
 
 " }}}
 
