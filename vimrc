@@ -1,6 +1,7 @@
 " Preamble --------------------------------------------------------------- {{{
 
 set nocompatible
+let g:pathogen_disabled = []
 call pathogen#infect()
 
 " }}}
@@ -246,8 +247,6 @@ map <leader>y "+y
 " Insert a hash rocket with <c-l>
 inoremap <c-l> <space>=><space>
 
-nnoremap <C-s> <esc>:w<CR>
-inoremap <C-s> <esc>:w<CR>
 noremap <C-x> <C-w>c
 
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -817,6 +816,53 @@ noremap <localleader>vi :wa<CR> :VimuxInspectRunner<CR>
 noremap <localleader>vk :wa<CR> :VimuxInterruptRunner<CR>
 noremap <localleader>vx :wa<CR> :VimuxClosePanes<CR>
 noremap <localleader>vp :VimuxPromptCommand<CR>
+" }}}
+
+" }}}
+
+
+" Languages -------------------------------------------------------------- {{{
+
+" Python ----------------------------------------------------------------- {{{
+" Python-mode
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 0
+
+" Documentation
+let g:pymode_doc = 0
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+
+" QTPY
+au FileType python nnoremap <silent><leader>tm <esc>:QTPY method verbose<cr>
+au FileType python nnoremap <silent><leader>tf <esc>:QTPY file verbose<cr>
+au FileType python nnoremap <silent><leader>tc <esc>:QTPY class verbose<cr>
+au FileType python nnoremap <silent><leader>ts :QTPY session<cr>
 " }}}
 
 " }}}
