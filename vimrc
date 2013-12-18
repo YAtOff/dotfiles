@@ -820,6 +820,9 @@ noremap <localleader>vp :VimuxPromptCommand<CR>
 " Tagbar {{{
 nnoremap <silent> <F9> :TagbarToggle<CR>
 " }}}
+" Ag {{{
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" }}}
 
 " }}}
 
