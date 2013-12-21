@@ -823,6 +823,14 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 " Ag {{{
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " }}}
+" Easytags {{{
+" ensure it checks the project specific tags file
+let g:easytags_dynamic_files = 2
+" store global tags in language specific files
+let g:easytags_by_filetype = '~/.vim/tags' 
+" " configure easytags to run ctags after saving the buffer
+let g:easytags_events = ['BufWritePost']
+" }}}
 
 " }}}
 
@@ -845,7 +853,8 @@ let g:pymode_doc = 0
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
-let g:pymode_lint_write = 1
+let g:pymode_lint_write = 0
+au FileType python nnoremap <silent><leader>ch <esc>:PyLint<cr>
 
 " Support virtualenv
 let g:pymode_virtualenv = 1
@@ -862,6 +871,10 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" Jedi
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
 
 
 " QTPY
