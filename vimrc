@@ -811,11 +811,21 @@ let g:ctrlp_prompt_mappings = {
 
 " }}}
 " Vimux {{{
-noremap <localleader>rl :wa<CR> :VimuxRunLastCommand<CR>
-noremap <localleader>vi :wa<CR> :VimuxInspectRunner<CR>
-noremap <localleader>vk :wa<CR> :VimuxInterruptRunner<CR>
-noremap <localleader>vx :wa<CR> :VimuxClosePanes<CR>
-noremap <localleader>vp :VimuxPromptCommand<CR>
+noremap <localleader>vp :VimuxPromptCommand<cr>
+
+function! VimuxSlime()
+    call VimuxSendText(@v)
+    call VimuxSendKeys("Enter")
+endfunction
+
+" If text is selected, save it in the v buffer and send that buffer it to tmux
+vnoremap <localleader>vs "vy :call VimuxSlime()<cr>
+
+" Select current paragraph and send it to tmux
+nnoremap <localleader>vs vip"vy :call VimuxSlime()<cr>
+
+let g:VimuxHeight = "50"
+let g:VimuxOrientation = "h"
 " }}}
 " Tagbar {{{
 nnoremap <silent> <F9> :TagbarToggle<CR>
