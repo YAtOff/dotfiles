@@ -784,7 +784,7 @@ nnoremap <leader>L :LinediffReset<cr>
 " }}}
 " Supertab {{{
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabLongestHighlight = 1
 let g:SuperTabCrMapping = 1
 
