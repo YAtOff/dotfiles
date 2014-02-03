@@ -82,9 +82,6 @@
 [submodule "vim/bundle/qtpy"]
 	path = vim/bundle/qtpy
 	url = https://github.com/ameade/qtpy-vim.git
-[submodule "vim/bundle/vim-misc"]
-	path = vim/bundle/vim-misc
-	url = https://github.com/xolox/vim-misc.git
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git
