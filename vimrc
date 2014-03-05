@@ -754,6 +754,23 @@ nnoremap <leader>I :call IndentGuides()<cr>
 
 " }}}
 
+" Create dir on save if not exitsts {{{
+
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
+" }}}
+
 " }}}
 
 " Plugins ---------------------------------------------------------------- {{{
@@ -807,6 +824,11 @@ let g:ctrlp_prompt_mappings = {
 \ 'PrtHistory(-1)':       ['<c-n>'],
 \ 'PrtHistory(1)':        ['<c-p>'],
 \ 'ToggleFocus()':        ['<c-tab>'],
+\ }
+
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(py[cod]|so)$',
 \ }
 
 " }}}
@@ -893,5 +915,36 @@ au FileType python nnoremap <silent><leader>tf <esc>:QTPY file verbose<cr>
 au FileType python nnoremap <silent><leader>tc <esc>:QTPY class verbose<cr>
 au FileType python nnoremap <silent><leader>ts :QTPY session<cr>
 " }}}
+
+" Javascript ------------------------------------------------------------- {{{
+
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+
+" }}}
+
+" CSS -------------------------------------------------------------------- {{{
+
+autocmd Filetype css setlocal ts=4 sts=4 sw=4
+
+" }}}
+
+" LESS ------------------------------------------------------------------- {{{
+
+autocmd Filetype less setlocal ts=4 sts=4 sw=4
+
+" }}}
+
+" html ------------------------------------------------------------------- {{{
+
+autocmd Filetype html setlocal ts=4 sts=4 sw=4
+
+" }}}
+
+" htmldjango ------------------------------------------------------------- {{{
+
+autocmd Filetype htmldjango setlocal ts=4 sts=4 sw=4
+
+" }}}
+
 
 " }}}
