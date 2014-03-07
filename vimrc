@@ -917,6 +917,11 @@ au FileType python nnoremap <silent><leader>ts :QTPY session<cr>
 " }}}
 
 " Javascript ------------------------------------------------------------- {{{
+nnoremap <leader>d :TernDef<cr>
+nnoremap <leader>k :TernDoc<cr>
+nnoremap <leader>y :TernType<cr>
+nnoremap <leader>f :TernRefs<cr>
+nnoremap <leader>r :TernRename<cr>
 
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 

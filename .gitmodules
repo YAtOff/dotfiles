@@ -109,3 +109,12 @@
 [submodule "vim/bundle/css3-syntax"]
 	path = vim/bundle/css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "vim/bundle/javascript"]
+	path = vim/bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/indent-guides"]
+	path = vim/bundle/indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/tern"]
+	path = vim/bundle/tern
+	url = https://github.com/marijnh/tern_for_vim.git
