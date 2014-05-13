@@ -89,6 +89,10 @@ set completeopt=longest,menuone,preview
 let mapleader = ","
 let maplocalleader = "\\"
 
+" Windows
+set winheight=40
+set winminheight=5
+
 " Cursorline {{{
 " Only show cursorline in the current window and in normal mode.
 
@@ -148,8 +152,9 @@ set smartindent
 " }}}
 " Color scheme {{{
 
-set t_Co=256                        " force vim to use 256 colors
-let g:solarized_termtrans=0
+let g:solarized_termcolors=256
+set t_Co=256                          " force vim to use 256 colors
+let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 set background=dark
@@ -755,7 +760,6 @@ nnoremap <leader>I :call IndentGuides()<cr>
 " }}}
 
 " Create dir on save if not exitsts {{{
-
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
@@ -764,6 +768,7 @@ function s:MkNonExDir(file, buf)
         endif
     endif
 endfunction
+
 augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
