@@ -133,3 +133,6 @@
 [submodule "vim/bundle/align"]
 	path = vim/bundle/align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "vim/bundel/auto-pairs"]
+	path = vim/bundel/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
