@@ -121,9 +121,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/notes"]
-	path = vim/bundle/notes
-	url = https://github.com/xolox/vim-notes.git
 [submodule "vim/bundle/targets"]
 	path = vim/bundle/targets
 	url = https://github.com/wellle/targets.vim.git
