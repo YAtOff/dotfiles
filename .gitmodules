@@ -130,3 +130,6 @@
 [submodule "vim/bundle/python"]
 	path = vim/bundle/python
 	url = https://github.com/hdima/python-syntax.git
+[submodule "vim/bundle/align"]
+	path = vim/bundle/align
+	url = https://github.com/vim-scripts/Align.git
