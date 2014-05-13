@@ -118,3 +118,15 @@
 [submodule "vim/bundle/tern"]
 	path = vim/bundle/tern
 	url = https://github.com/marijnh/tern_for_vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/notes"]
+	path = vim/bundle/notes
+	url = https://github.com/xolox/vim-notes.git
+[submodule "vim/bundle/targets"]
+	path = vim/bundle/targets
+	url = https://github.com/wellle/targets.vim.git
+[submodule "vim/bundle/coffee-script"]
+	path = vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
