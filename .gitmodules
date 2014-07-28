@@ -145,3 +145,6 @@
 [submodule "vim/bundle/cyrillic"]
 	path = vim/bundle/cyrillic
 	url = https://github.com/x1024/vim-cyrillic.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = https://github.com/tmhedberg/matchit.git
