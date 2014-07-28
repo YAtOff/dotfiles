@@ -37,9 +37,6 @@
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "vim/bundle/qargs"]
 	path = vim/bundle/qargs
 	url = https://github.com/nelstrom/vim-qargs.git
