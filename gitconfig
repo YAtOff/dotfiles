@@ -43,7 +43,7 @@
 [diff]
     tool = vimdiff
 [merge]
-    tool = vimdiff
+	tool = diffconflicts
     ff = only
 [user]
     name = Yavor Atov
@@ -52,3 +52,7 @@
     default = current
 [help]
     autocorrect = 1
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
