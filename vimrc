@@ -890,8 +890,9 @@ let g:pymode_doc = 0
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
-let g:pymode_lint_write = 0
-au FileType python nnoremap <silent><leader>ch <esc>:PyLint<cr>
+let g:pymode_lint_on_write = 0
+let g:pymode_lint_ignore = "E501,E126,E127,E128,W"
+au FileType python nnoremap <silent><leader>ch <esc>:PymodeLint<cr>
 
 " Support virtualenv
 let g:pymode_virtualenv = 1
@@ -915,10 +916,17 @@ let g:jedi#show_call_signatures = 0
 
 
 " QTPY
-au FileType python nnoremap <silent><leader>tm <esc>:QTPY method verbose<cr>
-au FileType python nnoremap <silent><leader>tf <esc>:QTPY file verbose<cr>
-au FileType python nnoremap <silent><leader>tc <esc>:QTPY class verbose<cr>
-au FileType python nnoremap <silent><leader>ts :QTPY session<cr>
+let g:qtpy_shell_command = "DJANGO_SETTINGS_MODULE=server.settings.test ./manage.py test"
+let g:qtpy_class_delimiter = "."
+let g:qtpy_method_delimiter = "."
+
+au FileType python nnoremap <silent><leader>tm <esc>:w <bar> QTPY method<cr>
+au FileType python nnoremap <silent><leader>tf <esc>:w <bar> QTPY file<cr>
+au FileType python nnoremap <silent><leader>tc <esc>:w <bar> QTPY class<cr>
+au FileType python nnoremap <silent><leader>tmv <esc>:w <bar> QTPY method verbose<cr>
+au FileType python nnoremap <silent><leader>tfv <esc>:w <bar> QTPY file verbose<cr>
+au FileType python nnoremap <silent><leader>tcv <esc>:w <bar> QTPY class verbose<cr>
+au FileType python nnoremap <silent><leader>ts :w <bar> QTPY session<cr>
 " }}}
 
 " Javascript ------------------------------------------------------------- {{{
