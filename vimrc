@@ -292,6 +292,75 @@ inoremap <c-]> <c-x><c-]>
 
 " }}}
 
+" Insert mode aditional commands {{{
+
+" Fix meta keys
+imap h <M-h>
+imap j <M-j>
+imap k <M-k>
+imap l <M-l>
+imap b <M-b>
+imap w <M-w>
+imap e <M-e>
+imap y <M-y>
+imap d <M-d>
+
+" provide hjkl movements in Insert mode via the <Alt> modifier key
+inoremap <M-h> <C-o>h
+inoremap <M-j> <C-o>j
+inoremap <M-k> <C-o>k
+inoremap <M-l> <C-o>l
+
+inoremap <M-b> <C-o>b
+inoremap <M-w> <C-o>w
+
+" Insert the rest of the line below the cursor.
+" Mnemonic: Elevate characters from below line
+inoremap <M-e> <Esc>jly$hkpa
+
+" Insert the rest of the line above the cursor.
+" Mnemonic:  Y depicts a funnel, through which the above line's characters pour onto the current line.
+inoremap <M-y> <Esc>kly$hjpa
+
+
+inoremap <C-a> <esc>I
+inoremap <C-e> <esc>A
+
+inoremap II <Esc>I
+inoremap AA <Esc>A
+inoremap OO <Esc>O
+inoremap CC <Esc>C
+inoremap SS <Esc>S
+inoremap DD <Esc>dd
+inoremap UU <Esc>u
+
+inoremap <M-d> <C-o>dw
+
+
+" }}}
+
+" Command line mode shortcuts {{{
+
+" provide hjkl movements in Command-line mode via the <Alt> modifier key
+cnoremap <M-h> <Left>
+cnoremap <M-j> <Down>
+cnoremap <M-k> <Up>
+cnoremap <M-l> <Right>
+
+cnoremap <C-a> <home>
+cnoremap <C-e> <end>
+
+" Normal mode command(s) go… --v <-- here
+cnoremap <expr> <M-h> &cedit. 'h' .'<C-c>'
+cnoremap <expr> <M-j> &cedit. 'j' .'<C-c>'
+cnoremap <expr> <M-k> &cedit. 'k' .'<C-c>'
+cnoremap <expr> <M-l> &cedit. 'l' .'<C-c>'
+
+cnoremap <expr> <M-b> &cedit. 'b' .'<C-c>'
+cnoremap <expr> <M-w> &cedit. 'w' .'<C-c>'
+
+" }}}
+
 " }}}
 
 
@@ -559,12 +628,6 @@ nnoremap N Nzzzv
 nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
-
-" Heresy
-inoremap <c-a> <esc>I
-inoremap <c-e> <esc>A
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
 
 " gi already moves to "last place you exited insert mode", so we'll map gI to
 " something similar: move to last change
