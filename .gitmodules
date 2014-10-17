@@ -148,3 +148,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/tmhedberg/matchit.git
+[submodule "tmux/plugins/tumx-ressurect"]
+	path = tmux/plugins/tumx-ressurect
+	url = https://github.com/tmux-plugins/tmux-resurrect
