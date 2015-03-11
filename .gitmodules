@@ -151,3 +151,9 @@
 [submodule "tmux/plugins/tumx-ressurect"]
 	path = tmux/plugins/tumx-ressurect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "vim/bundle/zealvim"]
+	path = vim/bundle/zealvim
+	url = https://github.com/KabbAmine/zeavim.vim.git
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
