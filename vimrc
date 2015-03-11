@@ -708,7 +708,7 @@ nnoremap zO zCzO
 " This mapping wipes out the z mark, which I never use.
 "
 " I use :sus for the rare times I want to actually background Vim.
-nnoremap <leader>z mzzMzvzz15<c-e>`z:Pulse<cr>
+nnoremap <leader>p mzzMzvzz15<c-e>`z:Pulse<cr>
 
 function! MyFoldText() " {{{
     let line = getline(v:foldstart)
@@ -823,7 +823,7 @@ nnoremap <leader>I :call IndentGuides()<cr>
 " }}}
 
 " Create dir on save if not exitsts {{{
-function s:MkNonExDir(file, buf)
+function! s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
         if !isdirectory(dir)
@@ -871,7 +871,7 @@ nnoremap <leader>L :LinediffReset<cr>
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabLongestHighlight = 1
-let g:SuperTabCrMapping = 1
+" let g:SuperTabCrMapping = 1
 
 "}}}
 " Ctrl-P {{{
@@ -1027,5 +1027,15 @@ autocmd Filetype htmldjango setlocal ts=4 sts=4 sw=4
 
 " }}}
 
+" haskell    ------------------------------------------------------------- {{{
+
+function! ReloadGHCi()
+    call VimuxSendText(":reload")
+    call VimuxSendKeys("Enter")
+endfunction
+
+autocmd Filetype haskell nnoremap <leader>r :w <bar> call ReloadGHCi()<cr>
+
+" }}}
 
 " }}}
