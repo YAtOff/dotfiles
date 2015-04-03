@@ -93,6 +93,14 @@ let maplocalleader = "\\"
 set winheight=40
 set winminheight=5
 
+" Undo {{{
+if exists("&undodir")
+    set undofile          "Persistent undo! Pure money.
+    let &undodir=&directory
+    set undolevels=500
+    set undoreload=500
+endif
+" }}}
 " Cursorline {{{
 " Only show cursorline in the current window and in normal mode.
 
