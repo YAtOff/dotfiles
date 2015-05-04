@@ -157,3 +157,18 @@
 [submodule "vim/bundle/vim-scala"]
 	path = vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "vim/bundle/quickfix-reflector"]
+	path = vim/bundle/quickfix-reflector
+	url = https://github.com/stefandtw/quickfix-reflector.vim.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/bundle/tsuquyomi"]
+	path = vim/bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "vim/bundle/typescript"]
+	path = vim/bundle/typescript
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/bundle/flow"]
+	path = vim/bundle/flow
+	url = https://github.com/facebook/vim-flow.git
