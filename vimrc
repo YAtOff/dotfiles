@@ -875,13 +875,6 @@ vnoremap <leader>l :Linediff<cr>
 nnoremap <leader>L :LinediffReset<cr>
 
 " }}}
-" Supertab {{{
-
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabLongestHighlight = 1
-" let g:SuperTabCrMapping = 1
-
-"}}}
 " Ctrl-P {{{
 
 let g:ctrlp_jump_to_buffer = 0
