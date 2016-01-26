@@ -130,9 +130,6 @@
 [submodule "vim/bundle/zealvim"]
 	path = vim/bundle/zealvim
 	url = https://github.com/KabbAmine/zeavim.vim.git
-[submodule "vim/bundle/vim-scala"]
-	path = vim/bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "vim/bundle/quickfix-reflector"]
 	path = vim/bundle/quickfix-reflector
 	url = https://github.com/stefandtw/quickfix-reflector.vim.git
