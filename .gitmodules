@@ -115,9 +115,6 @@
 [submodule "vim/bundle/javascript-libraries-syntax"]
 	path = vim/bundle/javascript-libraries-syntax
 	url = https://github.com/othree/javascript-libraries-syntax.vim.git
-[submodule "vim/bundle/jasmine"]
-	path = vim/bundle/jasmine
-	url = https://github.com/claco/jasmine.vim.git
 [submodule "vim/bundle/cyrillic"]
 	path = vim/bundle/cyrillic
 	url = https://github.com/x1024/vim-cyrillic.git
