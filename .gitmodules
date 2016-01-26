@@ -133,9 +133,6 @@
 [submodule "vim/bundle/jasmine"]
 	path = vim/bundle/jasmine
 	url = https://github.com/claco/jasmine.vim.git
-[submodule "vim/bundle/angular-vim-snippets"]
-	path = vim/bundle/angular-vim-snippets
-	url = https://github.com/matthewsimo/angular-vim-snippets.git
 [submodule "vim/bundle/cyrillic"]
 	path = vim/bundle/cyrillic
 	url = https://github.com/x1024/vim-cyrillic.git
