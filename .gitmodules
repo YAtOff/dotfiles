@@ -130,6 +130,3 @@
 [submodule "vim/bundle/flow"]
 	path = vim/bundle/flow
 	url = https://github.com/facebook/vim-flow.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
