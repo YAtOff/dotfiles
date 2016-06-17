@@ -130,3 +130,12 @@
 [submodule "vim/bundle/flow"]
 	path = vim/bundle/flow
 	url = https://github.com/facebook/vim-flow.git
+[submodule "vim/bundle/jedi"]
+	path = vim/bundle/jedi
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/ReplaceWithRegister"]
+	path = vim/bundle/ReplaceWithRegister
+	url = https://github.com/vim-scripts/ReplaceWithRegister.git
