@@ -292,6 +292,31 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
+" Stay in visual mode when indenting. You will never have to run gv after
+" performing an indentation.
+vnoremap < <gv
+vnoremap > >gv
+
+" Make Y yank everything from the cursor to the end of the line. This makes Y
+" act more like C or D because by default, Y yanks the current line (i.e. the
+" same as yy).
+noremap Y y$
+
+" Make Ctrl-e jump to the end of the current line in the insert mode. This is
+" handy when you are in the middle of a line and would like to go to its end
+" without switching to the normal mode.
+inoremap <C-e> <C-o>$
+
+" Allows you to easily replace the current word and all its occurrences.
+nnoremap <Leader>rc :%s/\<<C-r><C-w>\>/
+vnoremap <Leader>rc y:%s/<C-r>"/
+
+" Allows you to easily change the current word and all occurrences to something
+" else. The difference between this and the previous mapping is that the mapping
+" below pre-fills the current word for you to change.
+nnoremap <Leader>cc :%s/\<<C-r><C-w>\>/<C-r><C-w>
+vnoremap <Leader>cc y:%s/<C-r>"/<C-r>"
+
 
 " Insert Mode Completion {{{
 
@@ -1036,6 +1061,13 @@ function! ReloadGHCi()
 endfunction
 
 autocmd Filetype haskell nnoremap <leader>r :w <bar> call ReloadGHCi()<cr>
+
+" }}}
+
+" racket    ------------------------------------------------------------- {{{
+
+autocmd BufReadPost *.rkt,*.rktl set filetype=scheme
+autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.rkt
 
 " }}}
 

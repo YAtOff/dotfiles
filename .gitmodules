@@ -139,3 +139,9 @@
 [submodule "vim/bundle/ReplaceWithRegister"]
 	path = vim/bundle/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister.git
+[submodule "vim/bundle/paredit"]
+	path = vim/bundle/paredit
+	url = https://github.com/vim-scripts/paredit.vim.git
+[submodule "vim/bundle/vim-niji"]
+	path = vim/bundle/vim-niji
+	url = https://github.com/losingkeys/vim-niji.git
