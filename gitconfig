@@ -4,6 +4,8 @@
     graph = log --graph --decorate --oneline --branches
     dfc = diff --cached --color --color-words
     df = diff --color --color-words
+    dfsc = !git diff --cached --color | diff-so-fancy | less --tabs=4 -RFX
+    dfs = !git diff --color | diff-so-fancy | less --tabs=4 -RFX
     unstage = reset HEAD --
     last = log -1 HEAD
     s = status
@@ -57,3 +59,5 @@
 	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
 	keepBackup = false
+[http]
+	sslVerify = false

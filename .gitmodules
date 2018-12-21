@@ -145,3 +145,6 @@
 [submodule "vim/bundle/vim-niji"]
 	path = vim/bundle/vim-niji
 	url = https://github.com/losingkeys/vim-niji.git
+[submodule "vim/bundle/editorconfig"]
+	path = vim/bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git

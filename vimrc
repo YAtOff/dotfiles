@@ -872,6 +872,11 @@ augroup END
 
 " }}}
 
+" Add breakpoint line
+nmap <leader>bp :call system('echo ' . @% . ':' . line('.') . '>> dbg.txt')<cr>
+
+" }}}
+
 " }}}
 
 " Plugins ---------------------------------------------------------------- {{{
@@ -951,11 +956,14 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " }}}
 " Easytags {{{
 " ensure it checks the project specific tags file
-let g:easytags_dynamic_files = 2
+let g:easytags_dynamic_files = 1
 " store global tags in language specific files
 let g:easytags_by_filetype = '~/.vim/tags' 
 " " configure easytags to run ctags after saving the buffer
 let g:easytags_events = ['BufWritePost']
+" }}}
+" Vim-pipe {{{
+autocmd FileType sql let b:vimpipe_filetype="postgresql"
 " }}}
 
 " }}}
@@ -977,10 +985,10 @@ let g:pymode_doc = 0
 
 "Linting
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checker = ["pyflakes", "pep8"]
 " Auto check on save
 let g:pymode_lint_on_write = 0
-let g:pymode_lint_ignore = "E501,E126,E127,E128,W"
+let g:pymode_lint_ignore = "E201,E202,E203,E221,E231,E251,E252,E261,E265,E302,E501,E126,E127,E128,W"
 au FileType python nnoremap <silent><leader>ch <esc>:PymodeLint<cr>
 
 " Support virtualenv
@@ -989,6 +997,7 @@ let g:pymode_virtualenv = 1
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_key = '<leader>b'
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
 
 " syntax highlighting
 let g:pymode_syntax = 1
@@ -1068,6 +1077,12 @@ autocmd Filetype haskell nnoremap <leader>r :w <bar> call ReloadGHCi()<cr>
 
 autocmd BufReadPost *.rkt,*.rktl set filetype=scheme
 autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.rkt
+
+" }}}
+
+" JSON ------------------------------------------------------------------ {{{
+
+autocmd Filetype json setlocal ts=2 sts=2 sw=2
 
 " }}}
 
