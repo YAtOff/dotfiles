@@ -1,9 +1,11 @@
 [alias]
     ci = commit
+    ca = commit --amend
     co = checkout
     graph = log --graph --decorate --oneline --branches
     dfc = diff --cached --color --color-words
     df = diff --color --color-words
+# To use diff-so-fancy check https://github.com/so-fancy/diff-so-fancy
     dfsc = !git diff --cached --color | diff-so-fancy | less --tabs=4 -RFX
     dfs = !git diff --color | diff-so-fancy | less --tabs=4 -RFX
     unstage = reset HEAD --
@@ -13,6 +15,7 @@
     aa = add --all
     ff = merge --ff-only
     pullff = pull --ff-only
+    prb = pull --rebase
     noff = merge --no-ff
     fa = fetch --all
     pom = push origin master
@@ -36,21 +39,30 @@
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
     rms = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
-
+      wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 [color]
     ui = always
 [core]
     editor = vim --noplugin
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
     autocrlf = input
+# To use the delta pager check https://github.com/dandavison/delta
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = false      # or light = true, or omit for auto-detection
 [diff]
     tool = vimdiff
+
 [merge]
-	tool = diffconflicts
     ff = only
+    tool = zdiff3
 [user]
-    name = Yavor Atov
-    email = yavor.atov@gmail.com
+	name = Yavor Atov
+	email = yavor.atov@gmail.com
+	signingkey = 863226C3ED0BD152
 [push]
     default = current
 [help]
@@ -61,3 +73,11 @@
 	keepBackup = false
 [http]
 	sslVerify = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	template = ~/.git-commit-template
+	gpgsign = true
