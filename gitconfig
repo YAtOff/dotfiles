@@ -62,7 +62,6 @@
 [user]
 	name = Yavor Atov
 	email = yavor.atov@gmail.com
-	signingkey = 863226C3ED0BD152
 [push]
     default = current
 [help]
@@ -80,4 +79,3 @@
 	required = true
 [commit]
 	template = ~/.git-commit-template
-	gpgsign = true
